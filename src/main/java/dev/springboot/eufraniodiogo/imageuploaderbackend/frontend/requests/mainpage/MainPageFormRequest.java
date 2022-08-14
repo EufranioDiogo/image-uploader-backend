@@ -4,17 +4,17 @@ package dev.springboot.eufraniodiogo.imageuploaderbackend.frontend.requests.main
 import org.springframework.web.multipart.MultipartFile;
 
 public class MainPageFormRequest {
-    private MultipartFile multipartFile;
+    private MultipartFile file;
 
-    public MainPageFormRequest(MultipartFile multipartFile) {
-        this.multipartFile = multipartFile;
+    public MainPageFormRequest(MultipartFile file) {
+        this.file = file;
     }
 
-    public MultipartFile getMultipartFile() {
-        return multipartFile;
+    public MultipartFile getFile() {
+        return file;
     }
 
-    public void setMultipartFile(MultipartFile multipartFile) {
-        this.multipartFile = multipartFile;
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 }
