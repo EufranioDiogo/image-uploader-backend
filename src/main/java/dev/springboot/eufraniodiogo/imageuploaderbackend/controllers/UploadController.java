@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -32,6 +29,7 @@ public class UploadController {
             path = "/image",
             consumes = "multipart/form-data"
     )
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<ImageCreatedResponse> uploadImage(@ModelAttribute MainPageFormRequest mainPageFormRequest) {
         Optional<String> s = cloudinaryService.uploadImage(mainPageFormRequest.getFile());
 
